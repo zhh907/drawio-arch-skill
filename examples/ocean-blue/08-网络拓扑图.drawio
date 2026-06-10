@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-09" type="device">
+  <diagram name="网络拓扑图" id="net-topo">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1200" math="0" shadow="0" background="#F0F4F8">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG Board -->
+        <mxCell id="BG" value="" style="swimlane;fillColor=#E8EEF4;strokeColor=#CFD8DC;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1960" height="1160" as="geometry"/>
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="TITLE" value="Headroom 网络拓扑图" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="0" y="0" width="1960" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- VPC: Headroom Cloud -->
+        <mxCell id="VPC" value="" style="swimlane;fillColor=#E3F2FD;strokeColor=#1E88E5;strokeWidth=3;fontColor=#1565C0;fontSize=13;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=28;container=1;" vertex="1" parent="BG">
+          <mxGeometry x="12" y="60" width="1936" height="1080" as="geometry"/>
+        </mxCell>
+        <mxCell id="VPC_T" value="VPC: Headroom Cloud (10.0.0.0/16)" style="text;html=&lt;font style=&quot;font-size:13px;font-weight:bold;color:#1565C0&quot;&gt;VPC: Headroom Cloud (10.0.0.0/16)&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="VPC">
+          <mxGeometry x="0" y="0" width="400" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- AZ1: Public Subnet -->
+        <mxCell id="AZ1" value="" style="swimlane;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=2;fontColor=#1565C0;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;container=1;" vertex="1" parent="VPC">
+          <mxGeometry x="12" y="40" width="940" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="AZ1_T" value="可用区 A — 公有子网 (10.0.1.0/24)" style="text;html=&lt;font style=&quot;font-size:11px;font-weight:bold;color:#1565C0&quot;&gt;可用区 A — 公有子网 (10.0.1.0/24)&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="AZ1">
+          <mxGeometry x="0" y="0" width="400" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Load Balancer -->
+        <mxCell id="LB" value="Load Balancer&#xa;(ALB / Nginx)&#xa;:443 :80" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ1">
+          <mxGeometry x="300" y="36" width="340" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- Headroom Proxy Cluster -->
+        <mxCell id="PROXY_GRP" value="" style="swimlane;fillColor=#E3F2FD;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#1565C0;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="AZ1">
+          <mxGeometry x="20" y="104" width="900" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROXY_GRP_T" value="Headroom Proxy 集群" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#1565C0&quot;&gt;Headroom Proxy 集群&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="PROXY_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="PX1" value="Proxy Node 1&#xa;:8443" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="PROXY_GRP">
+          <mxGeometry x="12" y="28" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PX2" value="Proxy Node 2&#xa;:8443" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="PROXY_GRP">
+          <mxGeometry x="224" y="28" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PX3" value="Proxy Node 3&#xa;:8443" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="PROXY_GRP">
+          <mxGeometry x="436" y="28" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PX4" value="Prometheus&#xa;:9090" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="PROXY_GRP">
+          <mxGeometry x="660" y="28" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Compute Layer -->
+        <mxCell id="COMP_GRP" value="" style="swimlane;fillColor=#FFFFFF;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="AZ1">
+          <mxGeometry x="20" y="236" width="900" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="COMP_GRP_T" value="计算层" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#455A64&quot;&gt;计算层&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="COMP_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="RUST_CORE" value="Rust Core&#xa;(headroom-core)&#xa;gRPC :50051" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP_GRP">
+          <mxGeometry x="12" y="28" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="SMART_CRUSH" value="SmartCrusher&#xa;压缩引擎" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP_GRP">
+          <mxGeometry x="234" y="28" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="CCR_SVC" value="CCR Service&#xa;缓存检索" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP_GRP">
+          <mxGeometry x="456" y="28" width="210" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="MEM_SVC" value="Memory Service&#xa;层级存储" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP_GRP">
+          <mxGeometry x="678" y="28" width="210" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Layer -->
+        <mxCell id="DATA_GRP" value="" style="swimlane;fillColor=#FFFFFF;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="AZ1">
+          <mxGeometry x="20" y="358" width="900" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="DATA_GRP_T" value="数据层" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#455A64&quot;&gt;数据层&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="DATA_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="SQLITE_VEC" value="SQLite-vec&#xa;向量索引&#xa;:5432" style="shape=cylinder3;size=10;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="DATA_GRP">
+          <mxGeometry x="12" y="28" width="210" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="HNSW_IDX" value="HNSW 索引&#xa;近邻搜索" style="shape=cylinder3;size=10;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="DATA_GRP">
+          <mxGeometry x="234" y="28" width="210" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="CODE_GRAPH" value="Code Graph&#xa;代码图索引" style="shape=cylinder3;size=10;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="DATA_GRP">
+          <mxGeometry x="456" y="28" width="210" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="CONFIG_STORE" value="Config Store&#xa;YAML 配置" style="shape=cylinder3;size=10;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="DATA_GRP">
+          <mxGeometry x="678" y="28" width="210" height="64" as="geometry"/>
+        </mxCell>
+
+        <!-- AZ2: External Endpoints -->
+        <mxCell id="AZ2" value="" style="swimlane;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=2;fontColor=#2E7D32;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;container=1;" vertex="1" parent="VPC">
+          <mxGeometry x="968" y="40" width="956" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="AZ2_T" value="外部服务 / 上游 Provider" style="text;html=&lt;font style=&quot;font-size:11px;font-weight:bold;color:#2E7D32&quot;&gt;外部服务 / 上游 Provider&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="AZ2">
+          <mxGeometry x="0" y="0" width="300" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Provider Endpoints -->
+        <mxCell id="OPENAI_EP" value="OpenAI API&#xa;api.openai.com&#xa;:443 HTTPS" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="20" y="36" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="ANTHROPIC_EP" value="Anthropic API&#xa;api.anthropic.com&#xa;:443 HTTPS" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="316" y="36" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="BEDROCK_EP" value="AWS Bedrock&#xa;bedrock-runtime.*.amazonaws.com&#xa;:443 SigV4" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="612" y="36" width="320" height="56" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="VERTEX_EP" value="Google Vertex AI&#xa;aiplatform.googleapis.com&#xa;:443 ADC" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="20" y="108" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="OLLAMA_EP" value="Ollama 本地&#xa;localhost:11434&#xa;:11434 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="316" y="108" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="LITELLM_EP" value="LiteLLM Router&#xa;多模型路由&#xa;:4000 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="AZ2">
+          <mxGeometry x="612" y="108" width="320" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- Observability Endpoints -->
+        <mxCell id="OBS_GRP" value="" style="swimlane;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="AZ2">
+          <mxGeometry x="20" y="190" width="912" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="OBS_GRP_T" value="可观测性" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#2E7D32&quot;&gt;可观测性&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="OBS_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="OTEL_EP" value="OTel Collector&#xa;:4318 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="OBS_GRP">
+          <mxGeometry x="12" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="GRAFANA_EP" value="Grafana&#xa;:3000 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="OBS_GRP">
+          <mxGeometry x="234" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="JAEGER_EP" value="Jaeger Tracing&#xa;:16686 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="OBS_GRP">
+          <mxGeometry x="456" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ALERT_EP" value="Alertmanager&#xa;:9093 HTTP" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="OBS_GRP">
+          <mxGeometry x="678" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Client Access -->
+        <mxCell id="CLIENT_GRP" value="" style="swimlane;fillColor=#FFFFFF;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="AZ2">
+          <mxGeometry x="20" y="330" width="912" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="CLIENT_GRP_T" value="客户端接入" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#455A64&quot;&gt;客户端接入&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="CLI_EP" value="CLI 客户端&#xa;headroom wrap" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="12" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="SDK_EP" value="SDK 嵌入&#xa;Python / Rust" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="234" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MCP_EP" value="MCP 客户端&#xa;Claude Code / IDE" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="456" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="AGENT_EP" value="Agent 框架&#xa;LangChain / Agno" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="678" y="28" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="WS_EP" value="WebSocket 客户端&#xa;/v1/responses" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="CLIENT_GRP">
+          <mxGeometry x="12" y="88" width="210" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Connectors: LB → Proxy -->
+        <mxCell id="C1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="AZ1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="92" as="sourcePoint"/>
+            <mxPoint x="470" y="104" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connectors: Proxy → Compute -->
+        <mxCell id="C2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="AZ1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="224" as="sourcePoint"/>
+            <mxPoint x="470" y="236" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connectors: Compute → Data -->
+        <mxCell id="C3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="AZ1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="346" as="sourcePoint"/>
+            <mxPoint x="470" y="358" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Cross-AZ: Proxy → Providers -->
+        <mxCell id="C4" value="HTTPS 出站" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#90CAF9;strokeWidth=2;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;fontColor=#455A64;fontSize=9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="VPC">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="952" y="230" as="sourcePoint"/>
+            <mxPoint x="968" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Internet Gateway -->
+        <mxCell id="IGW" value="Internet Gateway&#xa;出站 NAT / 入站 ALB" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="VPC">
+          <mxGeometry x="300" y="560" width="900" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- Security Groups -->
+        <mxCell id="SG_GRP" value="" style="swimlane;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="VPC">
+          <mxGeometry x="12" y="620" width="1912" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG_GRP_T" value="安全组 / 网络策略" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#455A64&quot;&gt;安全组 / 网络策略&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="0" y="0" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG1" value="SG-Proxy: 入 443/8443&#xa;出 443 (Provider)" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="12" y="28" width="300" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG2" value="SG-Core: 入 50051 (gRPC)&#xa;仅来自 SG-Proxy" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="324" y="28" width="300" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG3" value="SG-Data: 入 5432/9090&#xa;仅来自 SG-Core" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="636" y="28" width="300" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG4" value="SG-Obs: 入 4318/9090/3000&#xa;仅来自 SG-Proxy" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=8;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="948" y="28" width="300" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="SG5" value="WAF: DDoS 防护&#xa;入站流量过滤" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=8;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="SG_GRP">
+          <mxGeometry x="1260" y="28" width="300" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- DNS -->
+        <mxCell id="DNS" value="DNS (Route 53)&#xa;headroom.example.com → ALB" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="VPC">
+          <mxGeometry x="1320" y="560" width="500" height="44" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

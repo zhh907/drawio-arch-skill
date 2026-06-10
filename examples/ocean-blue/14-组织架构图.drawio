@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-09" type="device">
+  <diagram name="组织架构图" id="org-chart">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0" background="#F0F4F8">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG Board -->
+        <mxCell id="BG" value="" style="swimlane;fillColor=#E8EEF4;strokeColor=#CFD8DC;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1560" height="1060" as="geometry"/>
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="TITLE" value="Headroom 项目组织架构" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="0" y="0" width="1560" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- Root: Headroom Project -->
+        <mxCell id="ROOT" value="Headroom AI&#xa;Context Optimization Layer" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=13;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="580" y="70" width="400" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 1: Core Areas -->
+        <mxCell id="CORE_RUST" value="Rust 核心&#xa;headroom-core" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="120" y="180" width="220" height="52" as="geometry"/>
+        </mxCell>
+        <mxCell id="CORE_PROXY" value="Rust 代理&#xa;headroom-proxy" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="440" y="180" width="220" height="52" as="geometry"/>
+        </mxCell>
+        <mxCell id="CORE_PY" value="Python 包&#xa;headroom-ai" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="760" y="180" width="220" height="52" as="geometry"/>
+        </mxCell>
+        <mxCell id="CORE_DOCS" value="文档与测试&#xa;docs + tests" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1080" y="180" width="220" height="52" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 2: Rust Core Children -->
+        <mxCell id="RC_SMART" value="SmartCrusher&#xa;压缩引擎" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="12" y="300" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RC_CONTENT" value="ContentRouter&#xa;内容路由" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="172" y="300" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RC_TOKEN" value="Tokenizers&#xa;分词器" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="92" y="360" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RC_CCR" value="CCR Engine&#xa;缓存检索" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="12" y="420" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RC_DETECT" value="ContentDetection&#xa;类型检测" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="172" y="420" width="150" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 2: Rust Proxy Children -->
+        <mxCell id="RP_HTTP" value="HTTP Handler&#xa;axum 路由" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="380" y="300" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RP_WS" value="WebSocket&#xa;流式代理" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="540" y="300" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RP_AUTH" value="Auth Module&#xa;认证模块" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="380" y="360" width="150" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="RP_METRICS" value="Metrics&#xa;指标采集" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="540" y="360" width="150" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 2: Python Children -->
+        <mxCell id="PY_COMPRESS" value="Compressors&#xa;压缩模块" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="700" y="300" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_IMAGE" value="Image&#xa;图像压缩" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="840" y="300" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_MCP" value="MCP Server&#xa;协议服务" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="700" y="360" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_INTEGRATION" value="Integrations&#xa;框架集成" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="840" y="360" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_MEMORY" value="Memory&#xa;记忆系统" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="700" y="420" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_CLI" value="CLI&#xa;命令行" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="840" y="420" width="130" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 2: Docs Children -->
+        <mxCell id="DOC_ARCH" value="Architecture&#xa;架构文档" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1050" y="300" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="DOC_EVALS" value="Evals&#xa;评估框架" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1190" y="300" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="DOC_TESTS" value="Tests&#xa;测试套件" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1050" y="360" width="130" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="DOC_BENCH" value="Benchmarks&#xa;性能基准" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1190" y="360" width="130" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- Level 3: Integration Details -->
+        <mxCell id="INT_LC" value="LangChain" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1020" y="480" width="100" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="INT_AGNO" value="Agno" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1130" y="480" width="100" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="INT_STRANDS" value="Strands" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1240" y="480" width="100" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="INT_BEDROCK" value="Bedrock" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1020" y="524" width="100" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="INT_VERTEX" value="Vertex" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1130" y="524" width="100" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="INT_OLLAMA" value="Ollama" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=8;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1240" y="524" width="100" height="32" as="geometry"/>
+        </mxCell>
+
+        <!-- Connectors: Root → Level 1 -->
+        <mxCell id="CONN_ROOT_RUST" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="126" as="sourcePoint"/>
+            <mxPoint x="230" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_ROOT_PROXY" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="126" as="sourcePoint"/>
+            <mxPoint x="550" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_ROOT_PY" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="126" as="sourcePoint"/>
+            <mxPoint x="870" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_ROOT_DOCS" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=none;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="126" as="sourcePoint"/>
+            <mxPoint x="1190" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connectors: Level 1 → Level 2 -->
+        <mxCell id="CONN_RUST_CHILD" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="232" as="sourcePoint"/>
+            <mxPoint x="167" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_PROXY_CHILD" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="232" as="sourcePoint"/>
+            <mxPoint x="535" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_PY_CHILD" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="232" as="sourcePoint"/>
+            <mxPoint x="835" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_DOCS_CHILD" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#B0BEC5;strokeWidth=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1190" y="232" as="sourcePoint"/>
+            <mxPoint x="1185" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connectors: Integration → Level 3 -->
+        <mxCell id="CONN_INT" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#90CAF9;strokeWidth=1;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="905" y="404" as="sourcePoint"/>
+            <mxPoint x="1170" y="480" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PyO3 Bridge label -->
+        <mxCell id="PYO3" value="PyO3 Bridge&#xa;(Rust ↔ Python)" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#1E88E5;strokeWidth=2;dashed=1;dashPattern=8 4;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="560" y="530" width="160" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="CONN_PY03_RUST" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=1;dashed=1;dashPattern=4 4;endArrow=none;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="552" as="sourcePoint"/>
+            <mxPoint x="230" y="460" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CONN_PY03_PY" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=1;dashed=1;dashPattern=4 4;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="552" as="sourcePoint"/>
+            <mxPoint x="835" y="440" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="LEGEND" value="" style="swimlane;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#1565C0;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="BG">
+          <mxGeometry x="12" y="640" width="600" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_T" value="图例" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#1565C0&quot;&gt;图例&lt;/font&gt;;align=left;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="8" y="0" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_L1" value="一级模块" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_L2" value="二级模块" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="120" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_L3" value="三级/外部" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="228" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_L4" value="文档/测试" style="rounded=1;arcSize=6;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#455A64;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="336" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_BRIDGE" value="PyO3 跨语言桥接" style="text;html=&lt;font style=&quot;font-size:9px;color:#1565C0&quot;&gt;PyO3 跨语言桥接 (虚线框)&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="68" width="300" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_TREE" value="树形层级: 项目 → crate → 模块 → 集成" style="text;html=&lt;font style=&quot;font-size:9px;color:#455A64&quot;&gt;树形层级: 项目 → crate → 模块 → 集成&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="92" width="400" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-09" type="device">
+  <diagram name="状态机图" id="state-diagram">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0" background="#F0F4F8">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG Board -->
+        <mxCell id="BG" value="" style="swimlane;fillColor=#E8EEF4;strokeColor=#CFD8DC;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1560" height="1060" as="geometry"/>
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="TITLE" value="Headroom 请求状态机" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="0" y="0" width="1560" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- Initial State -->
+        <mxCell id="INIT" value="" style="ellipse;fillColor=#0D47A1;strokeColor=none;" vertex="1" parent="BG">
+          <mxGeometry x="98" y="200" width="36" height="36" as="geometry"/>
+        </mxCell>
+
+        <!-- S1: Idle -->
+        <mxCell id="S1" value="Idle&#xa;(等待请求)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="60" y="320" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S2: Authenticating -->
+        <mxCell id="S2" value="Authenticating&#xa;(认证中)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="340" y="200" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S3: Rejected -->
+        <mxCell id="S3" value="Rejected&#xa;(认证失败)" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="340" y="320" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S4: Parsing -->
+        <mxCell id="S4" value="Parsing&#xa;(解析请求)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="620" y="200" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S5: Detecting Content -->
+        <mxCell id="S5" value="ContentRouting&#xa;(类型检测)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="900" y="200" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- Composite State: Compressing -->
+        <mxCell id="COMP" value="" style="swimlane;fillColor=#E3F2FD;strokeColor=#1E88E5;strokeWidth=2;fontColor=#1565C0;fontSize=12;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;container=1;" vertex="1" parent="BG">
+          <mxGeometry x="780" y="340" width="560" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="COMP_T" value="Compressing (压缩中)" style="text;html=&lt;font style=&quot;font-size:12px;font-weight:bold;color:#1565C0&quot;&gt;Compressing (压缩中)&lt;/font&gt;;align=left;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="COMP">
+          <mxGeometry x="0" y="0" width="300" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Sub-states inside Compressing -->
+        <mxCell id="S6A" value="CacheLookup&#xa;(缓存查询)" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP">
+          <mxGeometry x="20" y="40" width="150" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="S6B" value="SmartCrush&#xa;(智能压缩)" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP">
+          <mxGeometry x="200" y="40" width="150" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="S6C" value="LiveZone&#xa;(活动区压缩)" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP">
+          <mxGeometry x="380" y="40" width="150" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="S6D" value="StoreResult&#xa;(存储结果)" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=10;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="COMP">
+          <mxGeometry x="200" y="120" width="150" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- Sub-state transitions -->
+        <mxCell id="CS_6A_6B" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="COMP">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="64" as="sourcePoint"/>
+            <mxPoint x="200" y="64" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CS_6B_6C" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="COMP">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="64" as="sourcePoint"/>
+            <mxPoint x="380" y="64" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CS_6C_6D" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="COMP">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="455" y="88" as="sourcePoint"/>
+            <mxPoint x="275" y="120" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- S7: CacheHit -->
+        <mxCell id="S7" value="CacheHit&#xa;(缓存命中)" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="120" y="600" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S8: Forwarding -->
+        <mxCell id="S8" value="Forwarding&#xa;(转发中)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="600" y="600" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S9: Streaming -->
+        <mxCell id="S9" value="Streaming&#xa;(流式响应)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="880" y="600" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S10: Completed -->
+        <mxCell id="S10" value="Completed&#xa;(完成)" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="600" y="780" width="180" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- S11: Error -->
+        <mxCell id="S11" value="Error&#xa;(异常)" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1200" y="440" width="160" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- Final State -->
+        <mxCell id="FINAL_OUTER" value="" style="ellipse;fillColor=none;strokeColor=#0D47A1;strokeWidth=3;" vertex="1" parent="BG">
+          <mxGeometry x="652" y="900" width="44" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="FINAL_INNER" value="" style="ellipse;fillColor=#0D47A1;strokeColor=none;" vertex="1" parent="BG">
+          <mxGeometry x="660" y="908" width="28" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Transitions -->
+        <mxCell id="T_INIT_S1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="116" y="236" as="sourcePoint"/>
+            <mxPoint x="116" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S1_S2" value="request_received" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="348" as="sourcePoint"/>
+            <mxPoint x="340" y="228" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S2_S3" value="auth_failed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;endArrow=block;endFill=1;fontColor=#0D47A1;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="256" as="sourcePoint"/>
+            <mxPoint x="430" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S3_S1" value="connection_reset" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;fontColor=#455A64;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="348" as="sourcePoint"/>
+            <mxPoint x="240" y="348" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S2_S4" value="auth_ok" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="228" as="sourcePoint"/>
+            <mxPoint x="620" y="228" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S4_S5" value="headers_parsed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="228" as="sourcePoint"/>
+            <mxPoint x="900" y="228" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S5_COMP" value="type_detected" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="256" as="sourcePoint"/>
+            <mxPoint x="990" y="340" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_COMP_S7" value="cache_hit" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="470" as="sourcePoint"/>
+            <mxPoint x="300" y="628" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_COMP_S8" value="cache_miss" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="540" as="sourcePoint"/>
+            <mxPoint x="780" y="600" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S7_S10" value="return_cached" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=block;endFill=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="628" as="sourcePoint"/>
+            <mxPoint x="600" y="808" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S8_S9" value="stream=true" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="628" as="sourcePoint"/>
+            <mxPoint x="880" y="628" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S8_S10" value="stream=false" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="656" as="sourcePoint"/>
+            <mxPoint x="690" y="780" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S9_S10" value="stream_end" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="640" as="sourcePoint"/>
+            <mxPoint x="780" y="800" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="T_S10_S1" value="response_sent" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;fontColor=#1565C0;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="836" as="sourcePoint"/>
+            <mxPoint x="240" y="836" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T_S10_S1B" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="836" as="sourcePoint"/>
+            <mxPoint x="150" y="376" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Error transitions (from any state) -->
+        <mxCell id="T_COMP_S11" value="error / timeout" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;fontColor=#0D47A1;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1200" y="468" as="sourcePoint"/>
+            <mxPoint x="1200" y="468" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T_S8_S11" value="upstream_error" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;fontColor=#0D47A1;fontSize=9;fontStyle=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="610" as="sourcePoint"/>
+            <mxPoint x="1200" y="468" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- S11 → Final -->
+        <mxCell id="T_S11_FINAL" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1280" y="496" as="sourcePoint"/>
+            <mxPoint x="1280" y="922" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T_S11_FINAL2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0D47A1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1280" y="922" as="sourcePoint"/>
+            <mxPoint x="696" y="922" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- S10 → Final -->
+        <mxCell id="T_S10_FINAL" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="836" as="sourcePoint"/>
+            <mxPoint x="674" y="900" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="LEGEND" value="" style="swimlane;fillColor=#F5F7FA;strokeColor=#B0BEC5;strokeWidth=1;fontColor=#1565C0;fontSize=10;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=20;container=1;" vertex="1" parent="BG">
+          <mxGeometry x="60" y="60" width="500" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_T" value="图例" style="text;html=&lt;font style=&quot;font-size:10px;font-weight:bold;color:#1565C0&quot;&gt;图例&lt;/font&gt;;align=left;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="8" y="0" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_S1" value="正常状态" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_S2" value="成功/缓存" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="120" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_S3" value="错误/拒绝" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="228" y="28" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_T1" value="实线 = 同步转换" style="text;html=&lt;font style=&quot;font-size:9px;color:#455A64&quot;&gt;实线 = 同步转换&lt;/font&gt;;align=left;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="64" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_T2" value="虚线 = 异步/错误" style="text;html=&lt;font style=&quot;font-size:9px;color:#455A64&quot;&gt;虚线 = 异步/错误转换&lt;/font&gt;;align=left;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="12" y="88" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="LEG_T3" value="复合状态 = Compressing 包含 4 个子状态" style="text;html=&lt;font style=&quot;font-size:9px;color:#455A64&quot;&gt;复合状态 = Compressing 包含 4 个子状态&lt;/font&gt;;align=left;verticalAlign=middle;" vertex="1" parent="LEGEND">
+          <mxGeometry x="180" y="76" width="300" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

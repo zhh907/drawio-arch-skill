@@ -1,0 +1,243 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Headroom 组件依赖图 [Dark Night]" export="1" export-data="all">
+    <mxGraphModel dx="1800" dy="1200" grid="1" grid-size="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" page-scale="1" page-width="2000" page-height="820" background="#0D1B2A" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG_BOARD -->
+        <mxCell id="BOARD" value="" style="swimlane;fillColor=#162032;strokeColor=#415A77;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="2000" height="820" as="geometry"/>
+        </mxCell>
+
+        <!-- Title Bar -->
+        <mxCell id="TITLE_BG" value="" style="fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="BOARD">
+          <mxGeometry x="0" y="0" width="2000" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="TITLE_TXT" value="Headroom 组件依赖图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="BOARD">
+          <mxGeometry x="300" y="5" width="1400" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Rust Workspace Container ==================== -->
+        <mxCell id="RUST_WS" value="Rust Workspace (Cargo)" style="swimlane;fillColor=#1B2838;strokeColor=#778DA9;strokeWidth=2;fontColor=#1B2838;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="30" y="56" width="1940" height="250" as="geometry"/>
+        </mxCell>
+
+        <!-- headroom-core (center, M5 infra) -->
+        <mxCell id="CORE" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="720" y="36" width="400" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="CORE_T" value="headroom-core" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="720" y="40" width="400" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="CORE_D" value="Rust 共享核心 / CCR + SmartCrusher + Tokenizers + ContentRouter" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="720" y="62" width="400" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- headroom-proxy (M1 primary) -->
+        <mxCell id="PROXY" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="100" y="154" width="350" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROXY_T" value="headroom-proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="100" y="158" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROXY_D" value="axum + tokio + AWS SigV4 + GCP Auth + Prometheus" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="100" y="180" width="350" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- headroom-py (M1 primary) -->
+        <mxCell id="PY_RUST" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="790" y="154" width="350" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_RUST_T" value="headroom-py" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="790" y="158" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_RUST_D" value="PyO3 绑定层 / Maturin cdylib 构建" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="790" y="180" width="350" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- headroom-parity (M3 outlined) -->
+        <mxCell id="PARITY" value="" style="rounded=1;arcSize=6;fillColor=#E8EEF4;strokeColor=#778DA9;strokeWidth=1;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="1400" y="154" width="350" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="PARITY_T" value="headroom-parity" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#1B2838;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="1400" y="158" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="PARITY_D" value="Rust ↔ Python 奇偶校验测试工具" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#C8D0DA;" vertex="1" parent="RUST_WS">
+          <mxGeometry x="1400" y="180" width="350" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Rust internal connectors -->
+        <mxCell id="RE1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PROXY" target="CORE" parent="RUST_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="RE2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PY_RUST" target="CORE" parent="RUST_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="RE3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PARITY" target="CORE" parent="RUST_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Python Ecosystem Container ==================== -->
+        <mxCell id="PY_WS" value="Python Ecosystem (headroom-ai)" style="swimlane;fillColor=#2A1F0E;strokeColor=#81C784;strokeWidth=2;fontColor=#E0A458;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="30" y="326" width="1940" height="460" as="geometry"/>
+        </mxCell>
+
+        <!-- headroom-ai package (M2 accent) -->
+        <mxCell id="PY_PKG" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="690" y="36" width="400" height="66" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_PKG_T" value="headroom-ai (pip install headroom-ai)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="690" y="40" width="400" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="PY_PKG_D" value="Python 主包 / 内含 Rust 编译扩展 headroom._core" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="PY_WS">
+          <mxGeometry x="690" y="62" width="400" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Python modules Row 1 -->
+        <mxCell id="MOD_CLI" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="140" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_CLI_T" value="CLI 模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="142" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_CLI_D" value="Click / Rich / headroom wrap / headroom proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="162" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_PROXY" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="140" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_PROXY_T" value="Python Proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="142" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_PROXY_D" value="FastAPI / Uvicorn / httpx / WebSocket" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="162" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_MCP" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="140" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_MCP_T" value="MCP Server" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="142" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_MCP_D" value="headroom_compress / retrieve / stats" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="162" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_INTG" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="140" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_INTG_T" value="框架集成" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="142" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_INTG_D" value="LangChain / Agno / Strands / LiteLLM / Vercel AI" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="162" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- Python modules Row 2 -->
+        <mxCell id="MOD_MEM" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="206" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_MEM_T" value="Memory 系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="208" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_MEM_D" value="HNSWLib / sqlite-vec / 层级记忆 / SharedContext" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="100" y="228" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_CODE" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="206" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_CODE_T" value="代码压缩" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="208" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_CODE_D" value="tree-sitter AST / ast-grep / 保留 imports &amp; signatures" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="540" y="228" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_ML" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="206" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_ML_T" value="ML 压缩" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="208" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_ML_D" value="Kompress / ONNX INT8 / ModernBERT / fastembed" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="PY_WS">
+          <mxGeometry x="980" y="228" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MOD_IMG" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="206" width="420" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_IMG_T" value="图像处理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="208" width="420" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="MOD_IMG_D" value="RapidOCR / SigLIP / 图像压缩路由" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1420" y="228" width="420" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- External Providers Row -->
+        <mxCell id="PROV_ANTH" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="225" y="320" width="350" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_ANTH_T" value="Anthropic API" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="225" y="322" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_ANTH_D" value="/v1/messages / SSE 流式" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="225" y="342" width="350" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PROV_OPEN" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="605" y="320" width="350" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_OPEN_T" value="OpenAI API" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="605" y="322" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_OPEN_D" value="/v1/chat/completions / /v1/responses" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="605" y="342" width="350" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PROV_BED" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="985" y="320" width="350" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_BED_T" value="AWS Bedrock" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="985" y="322" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_BED_D" value="SigV4 签名 / InvokeModel / EventStream" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="985" y="342" width="350" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PROV_VTX" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1365" y="320" width="350" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_VTX_T" value="Google Vertex" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1365" y="322" width="350" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="PROV_VTX_D" value="ADC 认证 / streamRawPredict" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="PY_WS">
+          <mxGeometry x="1365" y="342" width="350" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- Provider connectors (dashed, upward to PY_PKG) -->
+        <mxCell id="PE1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=1;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PROV_ANTH" target="PY_PKG" parent="PY_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="PE2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=1;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.4;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PROV_OPEN" target="PY_PKG" parent="PY_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="PE3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=1;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.6;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PROV_BED" target="PY_PKG" parent="PY_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="PE4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=1;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.8;entryY=1;entryDx=0;entryDy=0;" edge="1" source="PROV_VTX" target="PY_PKG" parent="PY_WS">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Cross-container Connector ==================== -->
+        <!-- headroom-ai → headroom-py (PyO3 bridge) -->
+        <mxCell id="BRIDGE" value="PyO3 / Maturin 构建" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#E0A458;fontSize=9;" edge="1" source="PY_PKG" target="PY_RUST" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

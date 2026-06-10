@@ -1,0 +1,368 @@
+<mxfile host="app.diagrams.net" agent="Claude Code" version="24.0.0">
+  <diagram name="Headroom 部署拓扑图 [Dark Night]" export="1" export-data="all">
+    <mxGraphModel dx="1800" dy="1200" grid="1" grid-size="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" page-scale="1" page-width="2000" page-height="980" background="#0D1B2A" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG_BOARD -->
+        <mxCell id="BOARD" value="" style="swimlane;fillColor=#162032;strokeColor=#415A77;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="2000" height="980" as="geometry"/>
+        </mxCell>
+
+        <!-- Title Bar -->
+        <mxCell id="TITLE_BG" value="" style="fillColor=#1B2838;strokeColor=none;" vertex="1" parent="BOARD">
+          <mxGeometry x="0" y="0" width="2000" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="TITLE_TXT" value="Headroom 部署拓扑图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="BOARD">
+          <mxGeometry x="300" y="5" width="1400" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Section 1: CLI Wrap ==================== -->
+        <mxCell id="S1" value="CLI Wrap 模式" style="swimlane;fillColor=#1B2838;strokeColor=#778DA9;strokeWidth=2;fontColor=#1B2838;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="20" y="56" width="970" height="440" as="geometry"/>
+        </mxCell>
+        <!-- S1_M1: Terminal -->
+        <mxCell id="S1_M1" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="42" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M1_T" value="开发者终端" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="46" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M1_D" value="Terminal / IDE (VS Code / JetBrains)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="68" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S1_M2: headroom wrap -->
+        <mxCell id="S1_M2" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="120" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M2_T" value="headroom wrap claude" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="124" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M2_D" value="零配置启动 / 自动设置代理环境变量 / RTK token 管理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="146" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S1_M3: AI Agent -->
+        <mxCell id="S1_M3" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="198" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M3_T" value="AI 编码代理 (子进程)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="202" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M3_D" value="Claude Code / Codex CLI / Cursor / Aider / Copilot / Gemini" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="224" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S1_M4: Proxy -->
+        <mxCell id="S1_M4" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="276" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M4_T" value="headroom-proxy (localhost)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="280" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M4_D" value="Rust/Axum 透明代理 / 压缩引擎 / CCR / Provider 适配" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="302" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S1_M5: Provider -->
+        <mxCell id="S1_M5" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="354" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M5_T" value="上游 Provider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="358" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_M5_D" value="Anthropic / OpenAI / AWS Bedrock / Google Vertex" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S1">
+          <mxGeometry x="35" y="380" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S1 Connectors -->
+        <mxCell id="S1_E1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S1_M1" target="S1_M2" parent="S1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_E2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S1_M2" target="S1_M3" parent="S1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_E3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S1_M3" target="S1_M4" parent="S1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S1_E4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S1_M4" target="S1_M5" parent="S1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Section 2: HTTP Proxy ==================== -->
+        <mxCell id="S2" value="HTTP Proxy 模式" style="swimlane;fillColor=#1B2838;strokeColor=#778DA9;strokeWidth=2;fontColor=#1B2838;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="1010" y="56" width="970" height="440" as="geometry"/>
+        </mxCell>
+        <!-- S2_M1: API Client -->
+        <mxCell id="S2_M1" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="42" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M1_T" value="API Client" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="46" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M1_D" value="OpenAI SDK / Anthropic SDK / LiteLLM / 任意 HTTP 客户端" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="68" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S2_M2: Proxy Port -->
+        <mxCell id="S2_M2" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="120" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M2_T" value="headroom proxy --port 8787" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="124" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M2_D" value="零代码改动 / base_url 指向 localhost:8787" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="146" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S2_M3: Proxy Engine -->
+        <mxCell id="S2_M3" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="198" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M3_T" value="headroom-proxy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="202" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M3_D" value="Rust/Axum / Auth Mode / 压缩引擎 / CCR / Provider 适配" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="224" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S2_M4: SQLite + Redis (split) -->
+        <mxCell id="S2_M4a" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="276" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M4a_T" value="SQLite" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="280" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M4a_D" value="单实例 CCR 持久化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="302" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M4b" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="505" y="276" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M4b_T" value="Redis (可选)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="505" y="280" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M4b_D" value="多 Worker 分布式缓存 / TTL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S2">
+          <mxGeometry x="505" y="302" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S2_M5: Provider -->
+        <mxCell id="S2_M5" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="354" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M5_T" value="上游 Provider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="358" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_M5_D" value="Anthropic / OpenAI / AWS Bedrock / Google Vertex" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S2">
+          <mxGeometry x="35" y="380" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S2 Connectors -->
+        <mxCell id="S2_E1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S2_M1" target="S2_M2" parent="S2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_E2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S2_M2" target="S2_M3" parent="S2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_E3a" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;endArrow=block;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S2_M3" target="S2_M4a" parent="S2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_E3b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;endArrow=block;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S2_M3" target="S2_M4b" parent="S2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S2_E4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S2_M4a" target="S2_M5" parent="S2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="345"/>
+              <mxPoint x="485" y="345"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== Section 3: MCP Server ==================== -->
+        <mxCell id="S3" value="MCP Server 模式" style="swimlane;fillColor=#1B2838;strokeColor=#778DA9;strokeWidth=2;fontColor=#1B2838;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="20" y="506" width="970" height="440" as="geometry"/>
+        </mxCell>
+        <!-- S3_M1: AI Tool -->
+        <mxCell id="S3_M1" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="42" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M1_T" value="AI 工具" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="46" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M1_D" value="Claude Desktop / Cursor / Windsurf / VS Code Copilot" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="68" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S3_M2: MCP Protocol -->
+        <mxCell id="S3_M2" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="120" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M2_T" value="MCP Protocol" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="124" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M2_D" value="stdio / SSE 传输 / JSON-RPC 工具调用" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="146" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S3_M3: Three tools -->
+        <mxCell id="S3_M3a" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="198" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3a_T" value="headroom_compress" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="202" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3a_D" value="按内容类型压缩" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="224" width="280" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3b" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="345" y="198" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3b_T" value="headroom_retrieve" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="345" y="202" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3b_D" value="按需检索原始内容" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="345" y="224" width="280" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3c" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="655" y="198" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3c_T" value="headroom_stats" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="655" y="202" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M3c_D" value="压缩比统计" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="655" y="224" width="280" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S3_M4: CCR -->
+        <mxCell id="S3_M4" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="276" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M4_T" value="CCR Store" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="280" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M4_D" value="SQLite / BLAKE3 内容寻址 / TTL 自动过期" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="302" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S3_M5: Provider -->
+        <mxCell id="S3_M5" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="354" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M5_T" value="上游 Provider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="358" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_M5_D" value="Anthropic / OpenAI / AWS Bedrock / Google Vertex" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S3">
+          <mxGeometry x="35" y="380" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S3 Connectors -->
+        <mxCell id="S3_E1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S3_M1" target="S3_M2" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_E2a" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S3_M2" target="S3_M3a" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_E2b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S3_M2" target="S3_M3b" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_E2c" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S3_M2" target="S3_M3c" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_E3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S3_M3b" target="S3_M4" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S3_E4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S3_M4" target="S3_M5" parent="S3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== Section 4: Docker Compose ==================== -->
+        <mxCell id="S4" value="Docker Compose 模式" style="swimlane;fillColor=#1B2838;strokeColor=#778DA9;strokeWidth=2;fontColor=#1B2838;fontSize=11;fontStyle=1;rounded=1;arcSize=6;horizontal=1;collapsible=0;startSize=24;spacingLeft=6;container=1;" vertex="1" parent="BOARD">
+          <mxGeometry x="1010" y="506" width="970" height="440" as="geometry"/>
+        </mxCell>
+        <!-- S4_M1: Docker Compose -->
+        <mxCell id="S4_M1" value="" style="rounded=1;arcSize=6;fillColor=#E0A458;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="42" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M1_T" value="docker-compose.yml" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="46" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M1_D" value="一键启动 / .env 环境变量 / 端口映射 / 健康检查" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#E0A458;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="68" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S4_M2: Proxy Container -->
+        <mxCell id="S4_M2" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="120" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M2_T" value="headroom-proxy 容器" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="124" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M2_D" value="Rust 多阶段构建 / 多 Worker / 自动重启" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="146" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S4_M3: SQLite + Redis (split) -->
+        <mxCell id="S4_M3a" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="198" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M3a_T" value="SQLite Volume" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="202" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M3a_D" value="持久化存储卷 / 跨重启保留" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="224" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M3b" value="" style="rounded=1;arcSize=6;fillColor=#0D1B2A;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="198" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M3b_T" value="Redis 容器 (可选)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="202" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M3b_D" value="多实例分布式缓存 / 独立容器" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="224" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S4_M4: Prometheus + Grafana (split) -->
+        <mxCell id="S4_M4a" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="276" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M4a_T" value="Prometheus Exporter" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="280" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M4a_D" value="/metrics 端点 / 压缩比 + 缓存命中" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="302" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M4b" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="276" width="430" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M4b_T" value="Dashboard" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="280" width="430" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M4b_D" value="headroom dashboard / token savings 可视化" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="505" y="302" width="430" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S4_M5: Provider -->
+        <mxCell id="S4_M5" value="" style="rounded=1;arcSize=6;fillColor=#415A77;strokeColor=none;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="354" width="900" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M5_T" value="上游 Provider" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=1;fontColor=#E8EEF4;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="358" width="900" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_M5_D" value="Anthropic / OpenAI / AWS Bedrock / Google Vertex" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#778DA9;" vertex="1" parent="S4">
+          <mxGeometry x="35" y="380" width="900" height="18" as="geometry"/>
+        </mxCell>
+        <!-- S4 Connectors -->
+        <mxCell id="S4_E1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S4_M1" target="S4_M2" parent="S4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_E2a" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;endArrow=block;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S4_M2" target="S4_M3a" parent="S4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_E2b" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#E0A458;strokeWidth=2;endArrow=block;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S4_M2" target="S4_M3b" parent="S4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="S4_E3a" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="S4_M2" target="S4_M4a" parent="S4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="485" y="260"/>
+              <mxPoint x="250" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S4_E4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;strokeColor=#778DA9;strokeWidth=2;endArrow=block;endFill=1;" edge="1" source="S4_M3a" target="S4_M5" parent="S4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="345"/>
+              <mxPoint x="485" y="345"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

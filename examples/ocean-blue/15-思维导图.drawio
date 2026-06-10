@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-09" type="device">
+  <diagram name="思维导图" id="mindmap">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1200" math="0" shadow="0" background="#F0F4F8">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- BG Board -->
+        <mxCell id="BG" value="" style="swimlane;fillColor=#E8EEF4;strokeColor=#CFD8DC;strokeWidth=2;rounded=1;arcSize=4;startSize=0;horizontal=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1960" height="1160" as="geometry"/>
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="TITLE" value="Headroom 技术栈全景" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=20;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="0" y="0" width="1960" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- Center Node -->
+        <mxCell id="CENTER" value="Headroom AI" style="rounded=1;arcSize=6;fillColor=#0D47A1;strokeColor=none;fontColor=#FFFFFF;fontSize=16;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="830" y="480" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 1: Core Engine (top-right) -->
+        <mxCell id="B1" value="Core Engine" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1200" y="120" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B1_1" value="SmartCrusher" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="68" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B1_2" value="ContentRouter" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="108" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B1_3" value="CCR Engine" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="148" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B1_4" value="Live Zone" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1600" y="88" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B1_5" value="Tokenizers" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1600" y="124" width="100" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 2: Proxy (right) -->
+        <mxCell id="B2" value="Proxy Server" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1200" y="340" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B2_1" value="axum + tokio" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="300" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B2_2" value="HTTP/2" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="340" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B2_3" value="WebSocket" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="380" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B2_4" value="FastAPI" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1600" y="320" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B2_5" value="uvicorn" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1600" y="356" width="100" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 3: ML / Compression (bottom-right) -->
+        <mxCell id="B3" value="ML 压缩" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1200" y="560" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B3_1" value="Kompress (ONNX)" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="520" width="140" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B3_2" value="FastEmbed" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="560" width="140" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B3_3" value="ModernBERT" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1440" y="600" width="140" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B3_4" value="SigLIP (图像)" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1620" y="540" width="120" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B3_5" value="RapidOCR" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="1620" y="576" width="120" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 4: Storage (bottom-left) -->
+        <mxCell id="B4" value="Storage" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="480" y="680" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B4_1" value="Semantic Cache" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="640" width="130" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B4_2" value="SQLite-vec" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="680" width="130" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B4_3" value="HNSW Index" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="720" width="130" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B4_4" value="Memory System" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="80" y="660" width="120" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B4_5" value="Code Graph" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="80" y="696" width="120" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 5: Providers (left) -->
+        <mxCell id="B5" value="Providers" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="400" y="360" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_1" value="OpenAI" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="180" y="300" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_2" value="Anthropic" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="180" y="340" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_3" value="AWS Bedrock" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="180" y="380" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_4" value="Google Vertex" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="180" y="420" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_5" value="Ollama" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="40" y="340" width="100" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B5_6" value="LiteLLM" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="40" y="376" width="100" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 6: Integrations (top-left) -->
+        <mxCell id="B6" value="Integrations" style="rounded=1;arcSize=6;fillColor=#1E88E5;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="480" y="120" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B6_1" value="LangChain" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="80" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B6_2" value="MCP Server" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="120" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B6_3" value="Agno Agents" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="240" y="160" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B6_4" value="Strands SDK" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="80" y="100" width="110" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="B6_5" value="Claude Code" style="rounded=1;arcSize=6;fillColor=#E3F2FD;strokeColor=#90CAF9;strokeWidth=1;fontColor=#1565C0;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="80" y="136" width="110" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 7: Observability (top-center) -->
+        <mxCell id="B7" value="Observability" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="850" y="120" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B7_1" value="OpenTelemetry" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="780" y="68" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B7_2" value="Prometheus" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="920" y="68" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B7_3" value="Cost Tracking" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="850" y="68" width="120" height="32" as="geometry"/>
+        </mxCell>
+
+        <!-- Branch 8: Languages (bottom-center) -->
+        <mxCell id="B8" value="Languages" style="rounded=1;arcSize=6;fillColor=#43A047;strokeColor=none;fontColor=#FFFFFF;fontSize=12;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="850" y="780" width="160" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="B8_1" value="Rust (Core)" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="780" y="848" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B8_2" value="Python (SDK)" style="rounded=1;arcSize=6;fillColor=#FFFFFF;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;fontStyle=1;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="920" y="848" width="120" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="B8_3" value="PyO3 Bridge" style="rounded=1;arcSize=6;fillColor=#E8F5E9;strokeColor=#43A047;strokeWidth=1;fontColor=#2E7D32;fontSize=9;whiteSpace=wrap;align=center;verticalAlign=middle;" vertex="1" parent="BG">
+          <mxGeometry x="850" y="896" width="120" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Connectors: Center → Branches -->
+        <mxCell id="E_C_B1" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=1;exitY=0;entryX=0;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1030" y="500" as="sourcePoint"/>
+            <mxPoint x="1200" y="144" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B2" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=1;exitY=0.3;entryX=0;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1030" y="510" as="sourcePoint"/>
+            <mxPoint x="1200" y="364" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B3" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=none;exitX=1;exitY=0.7;entryX=0;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1030" y="540" as="sourcePoint"/>
+            <mxPoint x="1200" y="584" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B4" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=none;exitX=0;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="560" as="sourcePoint"/>
+            <mxPoint x="640" y="704" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B5" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=0;exitY=0.3;entryX=1;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="510" as="sourcePoint"/>
+            <mxPoint x="560" y="384" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B6" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#1E88E5;strokeWidth=2;endArrow=none;exitX=0;exitY=0;entryX=1;entryY=0.5;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="490" as="sourcePoint"/>
+            <mxPoint x="640" y="144" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B7" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=none;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="480" as="sourcePoint"/>
+            <mxPoint x="930" y="168" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_C_B8" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;curved=1;rounded=1;strokeColor=#43A047;strokeWidth=2;endArrow=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="560" as="sourcePoint"/>
+            <mxPoint x="930" y="780" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connectors: Branches → Sub-branches -->
+        <mxCell id="E_B1_1" value="" style="curved=1;rounded=1;strokeColor=#90CAF9;strokeWidth=1;endArrow=none;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1360" y="144" as="sourcePoint"/>
+            <mxPoint x="1440" y="84" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_B1_2" value="" style="curved=1;rounded=1;strokeColor=#90CAF9;strokeWidth=1;endArrow=none;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1360" y="144" as="sourcePoint"/>
+            <mxPoint x="1440" y="124" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E_B1_3" value="" style="curved=1;rounded=1;strokeColor=#90CAF9;strokeWidth=1;endArrow=none;" edge="1" parent="BG">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1360" y="144" as="sourcePoint"/>
+            <mxPoint x="1440" y="164" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
